@@ -1,0 +1,75 @@
+1. Data Structures
+
+- Map (represents .cub file)
+  - read_from_file (*)
+  - is_valid
+  - get_north_texture
+  - ...
+  - get_ceiling_color
+  - get_floor_color
+  - get_map_value(x, y) -> 0 1
+
+- Camera / Viewpoint (*)
+  - get_position_x()
+  - get_position_y()
+  - get_angle()
+  - move_forward()
+  - move_backward()
+  - strafe_left()
+  - strafe_right()
+  - rotate_left()
+  - rotate_right()
+
+- Renderer (raycasting)
+  - initialize(map, camera)
+  - render(image) (*)
+  - find_wall_start(x)
+  - find_wall_end(x)
+  - paint_ceiling(0, start)
+  - paint_floor(end, window_end)
+  - paint_wall(start, end)
+  - ...
+
+
+2. Algorithms
+
+- Init (*)
+  - read_map (read cub file and textures)
+  - validate_map
+  - initialize_camera
+  - initialize_window
+  - initialize_image
+
+- Main loop
+  - read_keyboard() -> change_camera()
+  - render_frame()
+  - put_image_to_window
+
+
+- Render
+  - rendered_render(image)
+    - implement RayCaster algorithm
+
+
+3. Code
+
+- Init: initialize_window, initialize_image
+    - Test pixels on image and display image
+- Read map / validate map
+    - Debug in console
+- Camera control
+    - Debug in console
+- Renderer
+
+4. Alternative approach
+
+- Init: initialize_window, initialize_image
+    - Test pixels on image and display image
+- Simple Renderer
+    - raycast for each pixel
+    - paint checkerboard floor
+- Camera control
+    - Test on floor
+- Read map / validate map
+    - Debug in console
+- Renderer
